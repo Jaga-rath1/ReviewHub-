@@ -1,0 +1,91 @@
+<%- layout("/layouts/boilerplate") %>
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <!-- User -->
+
+                    <div class="d-flex align-items-center mb-4">
+
+                        <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center fw-bold"
+                             style="width:60px;height:60px;font-size:24px;">
+                            <%= review.username.charAt(0).toUpperCase() %>
+                        </div>
+
+                        <div class="ms-3">
+                            <h3 class="mb-0">
+                                <%= review.username %>
+                            </h3>
+
+                            <small class="text-muted">
+                                Community Member
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+                        <h6 class="text-secondary">Email</h6>
+                        <p class="mb-0"><%= review.email %></p>
+                    </div>
+
+                    <!-- Review -->
+
+                    <div class="mb-4">
+                        <h6 class="text-secondary">Review</h6>
+
+                        <div class="border rounded p-3 bg-light">
+                            <%= review.message %>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Buttons -->
+
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+                        <div class="d-flex gap-2">
+
+                            <a href="/reviews/<%= review._id %>/edit"
+                               class="btn btn-warning">
+                                Edit Review
+                            </a>
+
+                            <form action="/reviews/<%= review._id %>?_method=DELETE"
+                                  method="POST">
+
+                                <button class="btn btn-danger">
+                                    Delete
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                        <a href="/reviews"
+                           class="btn btn-outline-secondary">
+                            ← Back
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,115 @@
+<%- layout("/layouts/boilerplate") %>
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-7 col-md-9">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Create New Review</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Share your valuable feedback with the ReviewHub community.
+                    </p>
+
+                    <form
+                        action="/reviews"
+                        method="POST"
+                        class="needs-validation"
+                        novalidate
+                    >
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                name="username"
+                                class="form-control"
+                                placeholder="Enter your username"
+                                required
+                            >
+
+                            <div class="invalid-feedback">
+                                Please enter your username.
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Your Review
+                            </label>
+
+                            <textarea
+                                name="message"
+                                class="form-control"
+                                rows="6"
+                                placeholder="Write your review here..."
+                                required
+                            ></textarea>
+
+                            <div class="invalid-feedback">
+                                Please write your review.
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <a
+                                href="/reviews"
+                                class="btn btn-outline-secondary"
+                            >
+                                ← Back
+                            </a>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Submit Review
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
